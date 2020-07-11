@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
+
+* {
+  outline: none;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  background: rgb(199, 199, 201);
+  font-family: 'Encode Sans Condensed', sans-serif;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: #000000;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background: #000000;
+  color: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: rgb(0, 0, 0);
+}
+
+main {
+  padding: 70px 20px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main > div {
+  margin: auto;
+  max-width: 600px;
+}
+
+main h2 span {
+  color: grey;
+}
+
+main p {
+  line-height: 1.5;
+  font-weight: 200;
+  margin: 20px 0;
+}
+
+main small {
+  font-weight: 300;
+  color: rgb(0, 0, 0);
+}
+
+#nav-container {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  pointer-events: none;
+}
+
+#nav-container .bg {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 70px);
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  background: rgb(0, 0, 0);
+}
+
+#nav-container:focus-within .bg {
+  visibility: visible;
+  opacity: .6;
+}
+
+#nav-container * {
+  visibility: visible;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  height: 70px;
+  width: 30px;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-left: 25px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.icon-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: rgb(255, 255, 255);
+  transition: .3s;
+}
+
+.icon-bar + .icon-bar {
+  margin-top: 5px;
+}
+
+#nav-container:focus-within .button {
+  pointer-events: none;
+}
+
+#nav-container:focus-within .icon-bar:nth-of-type(1) {
+  transform: translate3d(0,8px,0) rotate(45deg);
+}
+
+#nav-container:focus-within .icon-bar:nth-of-type(2) {
+  opacity: 0;
+}
+
+#nav-container:focus-within .icon-bar:nth-of-type(3) {
+  transform: translate3d(0,-8px,0) rotate(-45deg);
+}
+
+#nav-content {
+  margin-top: 70px;
+  padding: 20px;
+  width: 90%;
+  max-width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 70px);
+  background: #ffffff;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transform: translateX(-100%);
+  transition: transform .3s;
+  will-change: transform;
+  contain: paint;
+}
+
+#nav-content ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#nav-content li a {
+  padding: 10px 5px;
+  display: block;
+  text-transform: uppercase;
+  transition: color .1s;
+}
+
+#nav-content li a:hover {
+  color: grey;
+}
+
+#nav-content li:not(.small) + .small {
+  margin-top: auto;
+}
+
+.small {
+  display: flex;
+  align-self: center;
+}
+
+.small a {
+  font-size: 12px;
+  font-weight: 400;
+  color: black;
+}
+
+.small a + a {
+  margin-left: 15px;
+}
+
+#nav-container:focus-within #nav-content {
+  transform: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+a,
+a:visited,
+a:focus,
+a:active,
+a:link {
+  text-decoration: none;
+  outline: 0;
+}
+
+a {
+  color: currentColor;
+  transition: .2s ease-in-out;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+  height: auto;
+  width: 100%;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#form_estoque {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  width: 50%;
+  max-height: 70%;
+  overflow: auto;
+  background: #ffffff;
+}
+
+#form_estoque h4 {
+  margin: 5px 0 15px;
+  display: block;
+}
+
+#form_estoque input[type="text"],
+#form_estoque input[type="email"],
+#form_estoque input[type="tel"],
+#form_estoque input[type="password"],
+#form_estoque input[type="url"],
+#form_estoque textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#form_estoque input[type="text"]:hover,
+#form_estoque input[type="email"]:hover,
+#form_estoque input[type="tel"]:hover,
+#form_estoque input[type="password"]:hover,
+#form_estoque input[type="url"]:hover,
+#form_estoque textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#form_estoque textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#form_estoque button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#form_estoque button[type="submit"]:hover {
+  background: grey;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#form_estoque button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+#form_estoque input:focus,
+#form_estoque textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+.tabela_estoque {
+  border: 0px;
+  border-collapse: collapse;
+  border-spacing: 5px;
+  color: #363636;
+  width: 100%;
+  overflow: auto;
+}
+
+.tabela_estoque th {
+  border-bottom: 1px solid #777;
+  background-color: #C0C0C0;
+}
+
+.tabela_estoque td {
+  border-bottom: 0.5px solid rgb(209, 208, 208);
+  color: #363636;
+  background-color: #ffffff;
+  padding: 5px;
+}
+
+body {
+  background-color: rgb(83, 82, 82);
+}
+
+.button_exportar {
+  border: 0;
+  background: transparent;
+  height: 70px;
+  width: 10%;
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
